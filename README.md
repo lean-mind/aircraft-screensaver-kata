@@ -7,11 +7,20 @@ If you like this workshop, please visit our website and subscribe to our newslet
 
 * [Leanmind.es](https://leanmind.es)
 
+We aslso recommend our online training, [testing sostenible](https://testingsostenible.com)
+
 # Python version
 
 Requires python3.10 or higher.
 
-## Install
+## Create virtual env for python3.10
 
-pip install -r requirements.txt
+Move to the root folder of this repo and type:
+
+`python3.10 -m venv venv`
+
+## Install dependencies
+
+`source venv/bin/active`
+`pip install -r requirements.txt`
 
