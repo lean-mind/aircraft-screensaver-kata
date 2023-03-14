@@ -21,6 +21,7 @@ Move to the root folder of this repo and type:
 
 ## Install dependencies
 
-`source venv/bin/active
-pip install -r requirements.txt`
+`source venv/bin/active`
+
+`pip install -r requirements.txt`
 
