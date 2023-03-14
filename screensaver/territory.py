@@ -5,9 +5,11 @@ from screensaver.position import Position
 
 
 class Territory:
-    def __init__(self, width: int = 100, height: int = 100):
-        self.width = width
-        self.height = height
+    def __init__(self, max_longitude: int = 100, max_latitude: int = 100):
+        self.max_longitude = max_longitude
+        self.min_longitude = 0
+        self.max_latitude = max_latitude
+        self.min_latitude = 0
         self.flying_objects = []
 
     def register(self, flying_object: FlyingObject):
@@ -15,10 +17,10 @@ class Territory:
         # Proposal: handle the case of registering a collision
 
     def at_northern_border(self, position: Position):
-        return position.latitude == 0
+        return position.latitude == self.min_longitude
 
     def at_eastern_border(self, position: Position):
-        return position.longitude == self.width
+        return position.longitude == self.max_longitude
 
     def update_position(self, flying_object: FlyingObject):
         other_objects = [f for f in self.flying_objects if f != flying_object]
