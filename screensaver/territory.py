@@ -17,7 +17,7 @@ class Territory:
         # Proposal: handle the case of registering a collision
 
     def at_northern_border(self, position: Position):
-        return position.latitude == self.min_longitude
+        return position.latitude == self.min_latitude
 
     def at_eastern_border(self, position: Position):
         return position.longitude == self.max_longitude

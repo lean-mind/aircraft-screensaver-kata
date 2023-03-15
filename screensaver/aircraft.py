@@ -28,7 +28,7 @@ class Aircraft(FlyingObject):
                 if self.territory.at_northern_border(self.position):
                     new_position = Position(self.position.longitude + 1, self.position.latitude + 1)
                 elif self.territory.at_eastern_border(self.position):
-                    new_position = Position(self.position.longitude, self.position.latitude - 1)
+                    new_position = Position(self.position.longitude - 1, self.position.latitude - 1)
                 else:
                     new_position = Position(self.position.longitude + 1, self.position.latitude - 1)
             case direction.NorthWest:
@@ -54,7 +54,7 @@ class Aircraft(FlyingObject):
 
 
 def create(position: Position, territory: Territory, direction: Direction = None) -> Union[Aircraft, ValidationError]:
-    if position.longitude >= territory.max_longitude or position.latitude >= territory.max_latitude:
+    if position.longitude > territory.max_longitude or position.latitude > territory.max_latitude:
         return ValidationError("The position cant be out of the territory")
     return Aircraft(position, territory, direction)
 
