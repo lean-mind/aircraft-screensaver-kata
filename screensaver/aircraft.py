@@ -11,7 +11,6 @@ class Aircraft(FlyingObject):
     def __init__(self, position: Position, territory: Territory, direction: Direction = Direction.North):
         self.position = position
         self.territory = territory
-        self.territory.register(self)
         self.direction = direction
 
     def current_position(self) -> Position:
@@ -56,5 +55,8 @@ class Aircraft(FlyingObject):
 def create(position: Position, territory: Territory, direction: Direction = None) -> Union[Aircraft, ValidationError]:
     if position.longitude > territory.max_longitude or position.latitude > territory.max_latitude:
         return ValidationError("The position cant be out of the territory")
-    return Aircraft(position, territory, direction)
+
+    aircraft = Aircraft(position, territory, direction)
+    territory.register(aircraft)
+    return aircraft
 
