@@ -7,7 +7,7 @@ If you like this workshop, please visit our website and subscribe to our newslet
 
 * [Leanmind.es](https://leanmind.es)
 
-We aslso recommend our online training, [testing sostenible](https://testingsostenible.com)
+We also recommend our online training, [testing sostenible](https://testingsostenible.com)
 
 # Python version
 
